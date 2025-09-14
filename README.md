@@ -1,8 +1,8 @@
 # Trust and safety
 
-Should you trust an extension sideloaded from outside a browser's extension store? **Absolutely the fuck not!** That is never a good idea unless you're sure what you're getting. There could be any sort of malware or otherwise malicious code that I've put in the extension. I've included a third party library (JSZip) in this extension to be able to download albums as a single file, which comes as minified code which further obfuscates its functionality. If you don't know what you're doing, **don't install a sideloaded extension**.
+Should you trust an extension sideloaded from outside a browser's extension store? **Absolutely the fuck not!** That is never a good idea unless you're sure what you're getting. There could be any sort of malware or otherwise malicious code that I've put in the extension. I've also included a third party library (JSZip) in this extension to be able to download albums as a single file; that comes as minified code which - though legitimate for performance - obfuscates its functionality if you don't know what it's for, or my use case for it. **If you cannot trust the provider of the code, don't install a sideloaded extension**.
 
-That being said, the code here is open source for all eyes to see, and it's just a pretty minimal bit of DOM Manipulation (heh). You can check the version of JSZip I've included with the official source to verify the checksums match. **If you're not a developer, you should do something like passing this extension along to an LLM to get it to verify the safety of the code.** 
+That being said, the code here is open source for all eyes to see, and it's just a pretty minimal bit of DOM Manipulation (heh). You can check the version of JSZip I've included with the official source to verify the checksums match. **If you're not a developer, you should do something like passing my extension along to ChatGPT / an LLM to get it to verify the safety of the code.** 
 
 There is nothing malicious here, but you should still heed my warning for this and anything else.
 
@@ -123,3 +123,4 @@ Rebundle for Firefox: `powershell -Command "Compress-Archive -Path 'manifest.jso
 ## License
 
 This extension is for personal use only. Please respect the terms of service of the websites you use it on.
+
