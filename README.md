@@ -1,12 +1,10 @@
-# Video Downloader Browser Extension
+# Trust and safety
 
-A browser extension that adds download functionality to video and image album pages on boundhub.com. Available for both Firefox and Chrome. Firefox is recommended, Chrome is untested.
+Should you trust an extension sideloaded from outside a browser's extension store? **Absolutely the fuck not!** That is never a good idea unless you're sure what you're getting. There could be any sort of malware or otherwise malicious code that I've put in the extension. I've included a third party library (JSZip) in this extension to be able to download albums as a single file, which comes as minified code which further obfuscates its functionality. If you don't know what you're doing, **don't install a sideloaded extension**.
 
-# Words to the wise
+That being said, the code here is open source for all eyes to see, and it's just a pretty minimal bit of DOM Manipulation (heh). You can check the version of JSZip I've included with the official source to verify the checksums match. **If you're not a developer, you should do something like passing this extension along to an LLM to get it to verify the safety of the code.** 
 
-Should you trust an extension sideloaded from outside the extension store? **Absolutely the fuck not.** That is never a good idea unless you're absolutely sure what you're getting into. There could be any sort of malware or otherwise malicious code that someone has put in the extension. I've included jszip in this extension to be able to download albums as a single file, which comes as minified code which further obfuscates its functionality. If you don't know what you're doing, don't install a sideloaded extension.
-
-That being said, the code here is open source for all eyes to see, and it's just a pretty minimal bit of DOM Manipulation (heh). If you're not a developer, you should do something like passing this extension along to an LLM to get it to verify the safety of the code.
+There is nothing malicious here, but you should still heed my warning for this and anything else.
 
 # Usage
 
@@ -14,97 +12,47 @@ On a video, click the "Download Video" button in the tabs menu. It'll open the v
 
 On an album, click the "Download Album" button in the tabs menu. **You must keep the album tab open** once the download has started.
 
-## Installation Methods
+# Installation
 
-### Firefox Installation
+### For Firefox Users (**RECOMMENDED**)
 
-#### Method 1: Install from XPI File (Recommended)
+1. **Download** [`VideoDownloader-Firefox.xpi` from this repository](https://github.com/niffersnsfw/boundhub-media-helper/releases/download/v1.0.0/VideoDownloader-Firefox.xpi)
+2. **Open Firefox** and go to `about:addons`
+3. **Click the gear icon** (⚙️) in the top-right corner
+4. **Select "Install Add-on From File..."**
+5. **Choose** the `VideoDownloader-Firefox.xpi` file
+6. **Click "Add"** to install
+7. **Done!** Visit boundhub.com to use the extension
 
-1. **Download the extension**:
-   - Download `VideoDownloader-Firefox.xpi` from the releases (right hand side of the page)
+### For Chrome Users (**NOT** recommended, minimally tested)
 
-2. **Install in Firefox**:
-   - Open Firefox
-   - Go to `about:addons`
-   - Click the gear icon (⚙️) in the top-right corner
-   - Select "Install Add-on From File..."
-   - Choose the `VideoDownloader-Firefox.xpi` file
-   - Click "Add" to install
+1. **Download** [`VideoDownloader-Chrome.zip` from this repository](https://github.com/niffersnsfw/boundhub-media-helper/releases/download/v1.0.0/VideoDownloader-Chrome.zip)
+2. **Extract** the ZIP file to any folder on your computer
+3. **Open Chrome** and go to `chrome://extensions/`
+4. **Enable "Developer mode"** (toggle in top-right corner)
+5. **Click "Load unpacked"**
+6. **Select** the folder you extracted the files to
+7. **Done!** Visit boundhub.com to use the extension
 
-3. **Verify installation**:
-   - The extension should appear in your add-ons list
-   - Visit a video or album page on boundhub.com
-   - You should see a "Download Video" or "Download Album" button
+## How to Use
 
-#### Method 2: Temporary Installation (Developer Mode)
+### Download Videos
+1. Go to any video page on boundhub.com (URL contains `/videos` and page contains a video player)
+2. Click the **"Download Video"** button in the tabs menu
+3. The video will open in a second tab and start the download automatically; the second tab will close itself once the download has started
+4. Once the download has started, you can close the original video tab
 
-1. **Open Firefox Developer Tools**:
-   - Go to `about:debugging`
-   - Click "This Firefox" in the left sidebar
+### Download Image Albums
+1. Go to any album page on boundhub.com (URL contains `/albums`)
+2. Click the **"Download Album"** button in the tabs menu
+3. There will be a progress indicator as it downloads all images; you **must keep the album tab open** once the download has started
+4. All images will be saved as a single ZIP file
 
-2. **Load the extension**:
-   - Click "Load Temporary Add-on..."
-   - Navigate to this folder
-   - Select the `manifest.json` file
-   - Click "Open"
+---
 
-3. **Note**: This method requires reloading the extension after each Firefox restart
+## Stuff for nerds
 
-### Chrome Installation
-
-#### Method 1: Install from ZIP File (Recommended)
-
-1. **Download the extension**:
-   - Download `VideoDownloader-Chrome.zip` from the releases tab (right hand side of the page)
-
-2. **Extract the ZIP file**:
-   - Extract `VideoDownloader-Chrome.zip` to a folder
-   - You should have: `manifest-chrome.json`, `content-chrome.js`, `auto-download-chrome.js`, `jszip.min.js`, `styles.css`
-
-3. **Install in Chrome**:
-   - Open Chrome
-   - Go to `chrome://extensions/`
-   - Enable "Developer mode" (toggle in top-right corner)
-   - Click "Load unpacked"
-   - Select the folder containing the extracted files
-   - Click "Select Folder"
-
-4. **Verify installation**:
-   - The extension should appear in your extensions list
-   - Visit a video or album page on boundhub.com
-   - You should see a "Download Video" or "Download Album" button
-
-#### Method 2: Create Chrome Extension Manually
-
-If you want to create the Chrome extension yourself:
-
-1. **Select Chrome extension files**:
-   - `manifest-chrome.json` (rename to `manifest.json`)
-   - `content-chrome.js` (rename to `content.js`)
-   - `auto-download-chrome.js` (rename to `auto-download.js`)
-   - `jszip.min.js`
-   - `styles.css`
-
-2. **Create a folder** and place all files in it
-
-3. **Install as in Method 1**
-
-## Usage
-
-### Video Downloads
-1. Navigate to a video page on boundhub.com (URL contains `/videos`)
-2. Click the red "Download Video" button in the tabs menu
-3. The video URL will open in a new tab
-4. The video will automatically download and the tab will close
-
-### Album Downloads
-1. Navigate to an album page on boundhub.com (URL contains `/albums`)
-2. Click the red "Download Album" button in the tabs menu
-3. A progress indicator will show download progress
-4. All images will be downloaded as a single ZIP file
-
-## File Structure
-
+### File Structure
 ```
 VideoDownloader/
 ├── manifest.json                # Firefox extension configuration
@@ -120,9 +68,9 @@ VideoDownloader/
 └── README.md                    # This file
 ```
 
-## Technical Details
+### Technical Details
 
-### Firefox Version
+#### Firefox Version
 - **Manifest Version**: 2 (Firefox WebExtension)
 - **Permissions**: activeTab, downloads, storage
 - **Content Scripts**: 
@@ -130,17 +78,48 @@ VideoDownloader/
   - Runs on all URLs for MP4 auto-download
 - **Dependencies**: JSZip 3.10.1 (included locally)
 
-### Chrome Version
+#### Chrome Version
 - **Manifest Version**: 3 (Chrome Extension)
 - **Permissions**: activeTab, downloads, storage
 - **Content Scripts**: 
   - Runs on boundhub.com for video/album pages
   - Runs on all URLs for MP4 auto-download
 - **Dependencies**: JSZip 3.10.1 (included locally)
-- **Web Accessible Resources**: JSZip library accessible to content scripts
 
-### Development Notes
+### Building from Source
+
+#### Firefox Development
+1. **Edit** the Firefox source files (`manifest.json`, `content.js`, `auto-download.js`)
+2. **Test** with temporary installation:
+   - Go to `about:debugging` → "This Firefox"
+   - Click "Load Temporary Add-on..."
+   - Select `manifest.json`
+3. **Create XPI** when ready:
+   - Select all files: `manifest.json`, `content.js`, `auto-download.js`, `jszip.min.js`, `styles.css`
+   - Create ZIP archive
+   - Rename to `.xpi`
+
+#### Chrome Development
+1. **Edit** the Chrome source files (`manifest-chrome.json`, `content-chrome.js`, `auto-download-chrome.js`)
+2. **Test** with unpacked installation:
+   - Go to `chrome://extensions/`
+   - Enable "Developer mode"
+   - Click "Load unpacked"
+   - Select the folder with your files
+3. **Create ZIP** when ready:
+   - Select all files: `manifest-chrome.json`, `content-chrome.js`, `auto-download-chrome.js`, `jszip.min.js`, `styles.css`
+   - Create ZIP archive
+
+### Cross-Browser Development
+- Both versions share the same `jszip.min.js` and `styles.css` files
+- Chrome uses Manifest V3, Firefox uses Manifest V2
+- Chrome requires `web_accessible_resources` for JSZip
+- Both versions have identical functionality
 
 Rebundle for Chrome: `powershell -Command "Compress-Archive -Path 'manifest-chrome.json', 'content-chrome.js', 'auto-download-chrome.js', 'jszip.min.js', 'styles.css' -DestinationPath 'VideoDownloader-Chrome.zip' -Force"`
 
 Rebundle for Firefox: `powershell -Command "Compress-Archive -Path 'manifest.json', 'content.js', 'auto-download.js', 'jszip.min.js', 'styles.css' -DestinationPath 'VideoDownloader-Firefox.zip' -Force ; del VideoDownloader-Firefox.xpi ; ren VideoDownloader-Firefox.zip VideoDownloader-Firefox.xpi"`
+
+## License
+
+This extension is for personal use only. Please respect the terms of service of the websites you use it on.
