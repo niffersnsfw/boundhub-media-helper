@@ -1,0 +1,29 @@
+/* Video Downloader Styles */
+
+#video-downloader-btn {
+    margin-right: 10px;
+}
+
+#video-downloader-btn .download-button {
+    background-color: #242424;
+    color: black;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+#video-downloader-btn .download-button:hover {
+    background-color: #242424;
+    color: #f56c08;
+    text-decoration: none;
+}
+
+#video-downloader-btn .download-button:active {
+    background-color: #242424;
+    transform: translateY(1px);
+}
