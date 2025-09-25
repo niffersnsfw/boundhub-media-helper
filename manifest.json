@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "BH Media Helper",
+  "version": "1.0",
+  "description": "Download videos from video sites with automatic detection",
+  
+  "permissions": [
+    "activeTab",
+    "downloads",
+    "storage"
+  ],
+  
+  "content_scripts": [
+    {
+      "matches": ["*://boundhub.com/*", "*://www.boundhub.com/*"],
+      "js": ["jszip.min.js", "content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_end"
+    },
+    {
+      "matches": ["<all_urls>"],
+      "js": ["auto-download.js"],
+      "run_at": "document_start"
+    }
+  ],
+  
+  "browser_action": {
+    "default_title": "BH Media Helper"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Video Downloader",
+  "version": "1.0",
+  "description": "Download videos and image albums from boundhub.com",
+  
+  "permissions": [
+    "activeTab",
+    "downloads",
+    "storage"
+  ],
+  
+  "content_scripts": [
+    {
+      "matches": ["*://boundhub.com/*", "*://www.boundhub.com/*"],
+      "js": ["jszip.min.js", "content-chrome.js"],
+      "css": ["styles.css"],
+      "run_at": "document_end"
+    },
+    {
+      "matches": ["<all_urls>"],
+      "js": ["auto-download-chrome.js"],
+      "run_at": "document_start"
+    }
+  ],
+  
+  "action": {
+    "default_title": "Video Downloader"
+  },
+  
+  "web_accessible_resources": [
+    {
+      "resources": ["jszip.min.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
