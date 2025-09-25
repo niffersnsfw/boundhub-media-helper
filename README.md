@@ -23,7 +23,7 @@ On an album, click the "Download Album" button in the tabs menu. **You must keep
 5. **Done!** Visit boundhub.com to use the extension
 6. OPTIONAL: If you're using boundhub in a private window, you'll have to go to `about:addons`, click the three dots to the right of `BH Media Helper` and select the `Manage` menu. Toggle the `Run in Private Windows` option to "Allow".
 
-### For Chrome Users (**Not as recommended**, minimally tested)
+### For Chrome Users (**Not as recommended**, minimally tested - image downloading may not work)
 
 1. **Download** `VideoDownloader-Chrome.zip` [by going to releases](https://github.com/niffersnsfw/boundhub-media-helper/releases). Right click and save `VideoDownloader-Chrome.zip`.
 2. **Extract (unzip)** the ZIP file
