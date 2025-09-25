@@ -14,7 +14,7 @@ On an album, click the "Download Album" button in the tabs menu. **You must keep
 
 # Installation
 
-### For Firefox Users (**RECOMMENDED**)
+### For Firefox Users (**Recommended since I tested it here the most**)
 
 1. **Download** `VideoDownloader-Firefox.xpi` [by going to releases](https://github.com/niffersnsfw/boundhub-media-helper/releases). Right click and save `VideoDownloader-Firefox.xpi`.
 2. **Open Firefox** and type in your address bar `about:debugging#/runtime/this-firefox`and press enter.
@@ -23,7 +23,7 @@ On an album, click the "Download Album" button in the tabs menu. **You must keep
 5. **Done!** Visit boundhub.com to use the extension
 6. OPTIONAL: If you're using boundhub in a private window, you'll have to go to `about:addons`, click the three dots to the right of `BH Media Helper` and select the `Manage` menu. Toggle the `Run in Private Windows` option to "Allow".
 
-### For Chrome Users (**NOT** recommended, minimally tested)
+### For Chrome Users (**Not as recommended**, minimally tested)
 
 1. **Download** `VideoDownloader-Chrome.zip` [by going to releases](https://github.com/niffersnsfw/boundhub-media-helper/releases). Right click and save `VideoDownloader-Chrome.zip`.
 2. **Extract (unzip)** the ZIP file
@@ -32,6 +32,7 @@ On an album, click the "Download Album" button in the tabs menu. **You must keep
 5. **Click "Load unpacked"**
 6. **Select** the folder you extracted the files to
 7. **Done!** Visit boundhub.com to use the extension
+8. OPTIONAL: If you're using the site in an incognito window, after loading the unpacked extension, press the "Details" button, and scroll down to & check the **"Allow In Incognito"** option.
 
 ## How to Use
 
